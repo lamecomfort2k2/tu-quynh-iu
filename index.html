@@ -43,9 +43,14 @@ button.no{background:var(--soft)}
 <div class="hearts" id="hearts" aria-hidden="true"></div>
 <button type="button" class="mus" id="mus" aria-label="Bật hoặc tắt nhạc nền" title="Nhạc nền">🎵</button>
 <main class="card">
-  <section class="step on" id="s1">
+  <section class="step on" id="s0">
     <div class="emoji">💌</div>
-    <h1>Quỳnh sẽ đi ăn với Bèn khi Bèn trở về nhé?</h1>
+    <h1>Có một lời mời dành riêng cho Quỳnh</h1>
+    <div class="row"><button class="yes" id="open" type="button">Mở thư 💌</button></div>
+  </section>
+  <section class="step" id="s1">
+    <div class="emoji">💌</div>
+    <h1>Quỳnh chờ Bèn về rùi cho Bèn một buổi hẹn nhá</h1>
     <div class="row" id="btns">
       <button class="yes" id="yes">ukiii</button>
       <button class="no" id="no">không thèmmm</button>
@@ -58,12 +63,12 @@ button.no{background:var(--soft)}
   </section>
   <section class="step" id="s3">
     <div class="emoji">🕡</div>
-    <h1>Quỳnh muốn Bèn đón lúc mấy giờ?</h1>
+    <h1>Bèn có thể rước Quỳnh lúc mấy giờ nhỉ</h1>
     <div class="grid" id="times"></div>
   </section>
   <section class="step" id="s4">
     <div class="emoji">📍</div>
-    <h1>Quỳnh muốn được đón ở đâu?</h1>
+    <h1>Ở nhà hay ở cơ quan nè</h1>
     <div class="col" id="places"></div>
   </section>
   <section class="step" id="s5">
@@ -112,6 +117,7 @@ button.no{background:var(--soft)}
       go(5);
     });
   });
+  $("open").addEventListener("click",function(e){e.stopPropagation();startMusic();go(1)});
   $("yes").addEventListener("click",function(){go(2)});
 
   // Escaping "không thèmmm" button
